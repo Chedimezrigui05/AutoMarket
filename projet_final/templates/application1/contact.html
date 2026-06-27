@@ -1,0 +1,41 @@
+{% extends 'application1/page.html' %}
+{% load static %}
+
+{% block title %}Contact - AutoMarket{% endblock %}
+
+{% block content %}
+<div class="form-page">
+    <div class="container">
+        <h1>📬 Contactez AutoMarket</h1>
+
+        {% if success %}
+        <div class="success-message">
+            <h2>✅ Message envoyé !</h2>
+            <p>Merci de nous avoir contactés. Nous vous répondrons dans les plus brefs délais.</p>
+            <a href="{% url 'accueil' %}" class="btn btn-primary">Retour à l'accueil</a>
+        </div>
+        {% else %}
+        <form method="POST" class="form-contact">
+            {% csrf_token %}
+            <div class="form-group">
+                <label>Nom *</label>
+                <input type="text" name="nom" placeholder="Votre nom" required>
+            </div>
+            <div class="form-group">
+                <label>Email *</label>
+                <input type="email" name="email" placeholder="votre@email.com" required>
+            </div>
+            <div class="form-group">
+                <label>Sujet *</label>
+                <input type="text" name="sujet" placeholder="Sujet de votre message" required>
+            </div>
+            <div class="form-group">
+                <label>Message *</label>
+                <textarea name="message" placeholder="Votre message..." rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Envoyer</button>
+        </form>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

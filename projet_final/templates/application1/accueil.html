@@ -1,0 +1,37 @@
+{% extends 'application1/page.html' %}
+{% load static %}
+
+{% block title %}Accueil - AutoMarket{% endblock %}
+
+{% block content %}
+
+<div class="hero">
+    <h1>Bienvenue sur AutoMarket</h1>
+    <p>Découvrez des voitures de marque, neuves et d'occasion, avec un style moderne et élégant.</p>
+    <a href="{% url 'catalogue' %}" class="btn">Voir le Catalogue</a>
+    <a href="{% url 'commander' %}" class="btn">Réserver un essai</a>
+</div>
+
+<div class="container">
+    <h2>Nos catégories de véhicules</h2>
+    <div class="features-grid">
+        <div class="feature-card">
+            <h3>Berlines</h3>
+            <p>Confort, élégance et performance pour la route quotidienne.</p>
+        </div>
+        <div class="feature-card">
+            <h3>SUV</h3>
+            <p>Puissance et espace pour toutes les familles et les voyages.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Sportives</h3>
+            <p>Modèles rapides et dynamiques pour les amateurs de sensations.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Électriques</h3>
+            <p>Mobilité propre et technologie de pointe pour l'avenir.</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

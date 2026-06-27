@@ -1,0 +1,128 @@
+{% extends 'application1/page.html' %}
+{% load static %}
+
+{% block title %}Catalogue - AutoMarket{% endblock %}
+
+{% block content %}
+<div class="catalogue-page">
+    <div class="container">
+        <h1>Catalogue de voitures</h1>
+        <p class="subtitle">Explorez nos modèles de voitures, du SUV à la sportive en passant par les berlines haut de gamme.</p>
+
+        <div class="catalogue-section">
+            <h2>Berlines</h2>
+            <div class="produits-grid">
+                {% for produit in produits.berline %}
+                <div class="produit-card">
+                    {% if produit.image %}
+                    <img src="{{ produit.image.url }}" alt="{{ produit.nom }}" class="produit-image">
+                    {% endif %}
+                    <h3>{{ produit.nom }}</h3>
+                    <p>{{ produit.description }}</p>
+                    <span class="prix">{{ produit.prix }} DT</span>
+                    <a href="{% url 'commander' %}" class="btn btn-small">Réserver un essai</a>
+                </div>
+                {% empty %}
+                <p class="empty-msg">Aucun produit disponible. Ajoutez-en via l'admin !</p>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="catalogue-section">
+            <h2>SUV</h2>
+            <div class="produits-grid">
+                {% for produit in produits.suv %}
+                <div class="produit-card">
+                    {% if produit.image %}
+                    <img src="{{ produit.image.url }}" alt="{{ produit.nom }}" class="produit-image">
+                    {% endif %}
+                    <h3>{{ produit.nom }}</h3>
+                    <p>{{ produit.description }}</p>
+                    <span class="prix">{{ produit.prix }} DT</span>
+                    <a href="{% url 'commander' %}" class="btn btn-small">Réserver un essai</a>
+                </div>
+                {% empty %}
+                <p class="empty-msg">Aucun produit disponible. Ajoutez-en via l'admin !</p>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="catalogue-section">
+            <h2>Sportives</h2>
+            <div class="produits-grid">
+                {% for produit in produits.sport %}
+                <div class="produit-card">
+                    {% if produit.image %}
+                    <img src="{{ produit.image.url }}" alt="{{ produit.nom }}" class="produit-image">
+                    {% endif %}
+                    <h3>{{ produit.nom }}</h3>
+                    <p>{{ produit.description }}</p>
+                    <span class="prix">{{ produit.prix }} DT</span>
+                    <a href="{% url 'commander' %}" class="btn btn-small">Réserver un essai</a>
+                </div>
+                {% empty %}
+                <p class="empty-msg">Aucun produit disponible. Ajoutez-en via l'admin !</p>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="catalogue-section">
+            <h2>Électriques</h2>
+            <div class="produits-grid">
+                {% for produit in produits.electrique %}
+                <div class="produit-card">
+                    {% if produit.image %}
+                    <img src="{{ produit.image.url }}" alt="{{ produit.nom }}" class="produit-image">
+                    {% endif %}
+                    <h3>{{ produit.nom }}</h3>
+                    <p>{{ produit.description }}</p>
+                    <span class="prix">{{ produit.prix }} DT</span>
+                    <a href="{% url 'commander' %}" class="btn btn-small">Réserver un essai</a>
+                </div>
+                {% empty %}
+                <p class="empty-msg">Aucun produit disponible. Ajoutez-en via l'admin !</p>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="catalogue-section">
+            <h2>Luxe</h2>
+            <div class="produits-grid">
+                {% for produit in produits.luxe %}
+                <div class="produit-card">
+                    {% if produit.image %}
+                    <img src="{{ produit.image.url }}" alt="{{ produit.nom }}" class="produit-image">
+                    {% endif %}
+                    <h3>{{ produit.nom }}</h3>
+                    <p>{{ produit.description }}</p>
+                    <span class="prix">{{ produit.prix }} DT</span>
+                    <a href="{% url 'commander' %}" class="btn btn-small">Réserver un essai</a>
+                </div>
+                {% empty %}
+                <p class="empty-msg">Aucun produit disponible. Ajoutez-en via l'admin !</p>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="catalogue-section">
+            <h2>Crossover</h2>
+            <div class="produits-grid">
+                {% for produit in produits.crossover %}
+                <div class="produit-card">
+                    {% if produit.image %}
+                    <img src="{{ produit.image.url }}" alt="{{ produit.nom }}" class="produit-image">
+                    {% endif %}
+                    <h3>{{ produit.nom }}</h3>
+                    <p>{{ produit.description }}</p>
+                    <span class="prix">{{ produit.prix }} DT</span>
+                    <a href="{% url 'commander' %}" class="btn btn-small">Réserver un essai</a>
+                </div>
+                {% empty %}
+                <p class="empty-msg">Aucun produit disponible. Ajoutez-en via l'admin !</p>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
